@@ -1,0 +1,63 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+button {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #111;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.card {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+.add_blog {
+  background-color: #ddd;
+}
+.search {
+  input[type="text"] {
+    width: 200px;
+    padding: 0.6rem;
+    border: 1px solid #bbb;
+    border-radius: 8px 0 0 8px;
+  }
+  button {
+    width: 100px;
+    margin-left: -5px;
+    border-radius: 0 8px 8px 0;
+  }
+}
+.new {
+  label {
+    display: block;
+    margin: 0.5rem 0 0.25rem;
+  }
+  input[type="text"],
+  input[type="date"],
+  textarea {
+    width: 95%;
+    padding: 0.6rem;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+  }
+  button {
+    width: 20%;
+  }
+}

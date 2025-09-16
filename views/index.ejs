@@ -1,0 +1,50 @@
+<!--views/index.ejs-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Blog</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>My Blog</h1>
+      <form class="search" action="/search" method="POST">
+        <label for="keyword">キーワード検索:</label>
+        <input type="text" id="keyword" name="keyword" required />
+        <button type="submit">検索</button>
+      </form>
+    </div>
+
+    <div class="card add_blog">
+      <form class="new" action="/create" method="POST">
+        <h2>新しいブログを追加</h2>
+        <p>
+          <label for="title">タイトル:</label>
+          <input type="text" id="title" name="title" required />
+        </p>
+        <p>
+          <label for="date">投稿日:</label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            value="<%= new Date().toISOString().split('T')[0] %>"
+          />
+        </p>
+        <p>
+          <label for="content">内容:</label>
+          <textarea id="content" name="content" required></textarea>
+        </p>
+        <button type="submit">追加</button>
+      </form>
+    </div>
+
+    <% for(let i = 0; i < blogs.length; i++) { %>
+    <div class="card">
+      <h2><%= blogs[i].title %></h2>
+      <p>投稿日: <%= blogs[i].date.toISOString().split("T")[0]; %></p>
+      <p><%= blogs[i].content %></p>
+    </div>
+    <% } %>
+  </body>
+</html>

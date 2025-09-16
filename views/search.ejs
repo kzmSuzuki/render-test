@@ -1,0 +1,20 @@
+<!--views/index.ejs-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>キーワード検索結果</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>キーワード検索結果「<%= keyword %>」</h1>
+
+    <% for(let i = 0; i < blogs.length; i++) { %>
+    <div class="card">
+      <h2><%= blogs[i].title %></h2>
+      <p>投稿日: <%= blogs[i].date.toISOString().split("T")[0]; %></p>
+      <p><%= blogs[i].content %></p>
+    </div>
+    <% } %>
+    <button onclick="location.href='/'">戻る</button>
+  </body>
+</html>
